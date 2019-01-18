@@ -1,0 +1,32 @@
+:host {
+    background: #fff;
+    position: relative;
+    z-index: 2;
+    flex-grow: 1;
+    margin-left: 20px;
+    box-shadow: 0 1px 54px rgba(0, 0, 0, 0.27);
+    padding: 20px 30px;
+    overflow-y: scroll;
+    height: 100%;
+  }
+
+.button {
+    width: 100%;
+    background: #98C550;
+    border: none;
+    padding: 10px 15px;
+    text-align: center;
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.9);
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-family: inherit;
+
+    &:disabled {
+      background: rgba(0, 0, 0, 0.1);
+      color: rgba(0, 0, 0, 0.4);
+      cursor: not-allowed;
+    }
+}
+  

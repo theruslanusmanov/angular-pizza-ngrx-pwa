@@ -6,9 +6,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from  '@angular/common/http';
-import { MatToolbarModule } from  '@angular/material/toolbar';
-import { MatCardModule } from  '@angular/material/card';
-import { MatButtonModule } from  '@angular/material/button';
+import { PizzaModule } from './pizza/pizza.module';
 
 @NgModule({
   declarations: [
@@ -19,9 +17,7 @@ import { MatButtonModule } from  '@angular/material/button';
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     BrowserAnimationsModule,
     HttpClientModule,
-    MatToolbarModule,
-    MatCardModule,
-    MatButtonModule
+    PizzaModule
   ],
   providers: [],
   bootstrap: [AppComponent]

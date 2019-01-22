@@ -5,6 +5,7 @@ import { selectPizzaList } from '../../store/selectors/pizza.selector';
 import { GetPizzas } from '../../store/actions/pizza.actions';
 import { FormBuilder, Validators } from '@angular/forms';
 import { PizzaValidator } from '../../validators/pizza.validator';
+import { IAppState } from '../../store/state/app.state';
 
 @Component({
   selector: 'app-pizza-container',
@@ -28,7 +29,7 @@ export class PizzaContainerComponent implements OnInit {
     ])
   });
 
-  constructor(private store: Store<IPizzaState>, private fb: FormBuilder) { }
+  constructor(private store: Store<IAppState>, private fb: FormBuilder) { }
 
   createPizza() {
     return this.fb.group({

@@ -7,6 +7,13 @@ export const pizzaReducers = (
     action: PizzaActions
 ): IPizzaState => {
     switch (action.type) {
+        case EPizzaActions.GetPizzasSuccess: {
+            return {
+                ...state,
+                pizzas: action.payload
+            };
+        }
+        
         default:
             return state;
     }

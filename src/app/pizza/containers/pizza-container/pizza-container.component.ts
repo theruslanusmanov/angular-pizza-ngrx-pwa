@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
-import { IPizzaState } from '../../store/state/pizza.state';
 import { selectPizzaList } from '../../store/selectors/pizza.selector';
 import { GetPizzas } from '../../store/actions/pizza.actions';
 import { FormBuilder, Validators } from '@angular/forms';

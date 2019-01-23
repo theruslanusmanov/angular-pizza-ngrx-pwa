@@ -3,7 +3,7 @@ import { Effect, ofType, Actions } from '@ngrx/effects';
 import { PizzaService } from '../../services/pizza.service';
 import { GetPizzas, GetPizzasSuccess, EPizzaActions } from '../actions/pizza.actions';
 import { of } from 'rxjs';
-import { switchMap, map, withLatestFrom } from 'rxjs/operators';
+import { switchMap } from 'rxjs/operators';
 
 @Injectable()
 export class PizzaEffects {
@@ -17,5 +17,6 @@ export class PizzaEffects {
 
     constructor(
         private pizzaService: PizzaService,
-        private actions$: Actions) {}
+        private actions$: Actions
+    ) {}
 }

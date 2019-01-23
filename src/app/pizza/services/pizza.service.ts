@@ -9,6 +9,7 @@ export class PizzaService {
     constructor() { }
 
     getPizzas(): Observable<IPizza[]> {
+
         this.pizza = {
             id: 1,
             name: '12124',

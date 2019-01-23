@@ -13,6 +13,7 @@ import { PizzaFormSummaryComponent } from './components/pizza-form-summary/pizza
 import { PizzaEffects } from './store/effects/pizza.effects';
 import { EffectsModule } from '@ngrx/effects';
 import { PizzaService } from './services/pizza.service';
+import { appReducers } from './store/reducers/app.reducers';
 
 
 @NgModule({
@@ -26,7 +27,7 @@ import { PizzaService } from './services/pizza.service';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    StoreModule.forRoot({}),
+    StoreModule.forRoot(appReducers),
     EffectsModule.forRoot([PizzaEffects]),
   ],
   providers: [PizzaService],

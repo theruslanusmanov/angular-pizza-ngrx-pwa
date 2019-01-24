@@ -7,6 +7,7 @@ import { environment } from '../environments/environment';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from  '@angular/common/http';
 import { PizzaModule } from './pizza/pizza.module';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { PizzaModule } from './pizza/pizza.module';
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     BrowserAnimationsModule,
     HttpClientModule,
-    PizzaModule
+    PizzaModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

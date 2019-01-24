@@ -17,7 +17,7 @@ export class PizzaFormComponent implements OnInit {
 
   constructor() {
 
-   }
+  }
 
   ngOnInit() {}
 

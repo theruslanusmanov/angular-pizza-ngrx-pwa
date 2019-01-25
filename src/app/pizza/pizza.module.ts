@@ -14,6 +14,7 @@ import { PizzaEffects } from './store/effects/pizza.effects';
 import { EffectsModule } from '@ngrx/effects';
 import { PizzaService } from './services/pizza.service';
 import { appReducers } from './store/reducers/app.reducers';
+import { StoreRouterConnectingModule } from '@ngrx/router-store';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { appReducers } from './store/reducers/app.reducers';
     HttpClientModule,
     StoreModule.forRoot(appReducers),
     EffectsModule.forRoot([PizzaEffects]),
+    StoreRouterConnectingModule.forRoot({ stateKey: 'router' }),
   ],
   providers: [PizzaService],
   exports: [

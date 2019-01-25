@@ -39,6 +39,7 @@ export class PizzaContainerComponent implements OnInit {
 
   ngOnInit() {
     this.store.dispatch(new GetPizzas());
+    console.log(this.pizzas$.subscribe((s) => console.log(s)));
   }
 
 }

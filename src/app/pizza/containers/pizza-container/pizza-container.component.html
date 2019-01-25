@@ -1,5 +1,5 @@
 <app-pizza-view></app-pizza-view>
 <app-pizza-form 
     [parent]="form"
-    [pizzas]="pizzas">
+    [pizzas]="pizzas$ | async">
 </app-pizza-form>

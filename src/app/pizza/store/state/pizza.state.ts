@@ -6,6 +6,6 @@ export interface IPizzaState {
 }
 
 export const initialPizzaState: IPizzaState = {
-    pizzas: [null],
+    pizzas: null,
     selectedPizza: null
 }

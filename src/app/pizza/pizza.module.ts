@@ -15,13 +15,14 @@ import { EffectsModule } from '@ngrx/effects';
 import { PizzaService } from './services/pizza.service';
 import { appReducers } from './store/reducers/app.reducers';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
+import { PizzaFormStepsComponent } from './components/pizza-form-steps/pizza-form-steps.component';
 
 
 @NgModule({
   declarations: [
     PizzaContainerComponent,
     PizzaViewComponent, 
-    PizzaFormComponent, PizzaFormDetailsComponent, PizzaFormCreatorComponent, PizzaFormSummaryComponent
+    PizzaFormComponent, PizzaFormDetailsComponent, PizzaFormCreatorComponent, PizzaFormSummaryComponent, PizzaFormStepsComponent
   ],
   imports: [
     CommonModule,

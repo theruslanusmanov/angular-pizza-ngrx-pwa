@@ -1,6 +1,9 @@
+:host {
+	background-color: rgba(248, 250, 234, 0.829);
+}
 .pizza-viewer {
     height: 300px;
-    width: 100%;
+	width: 600px;
 	position: relative;
 	
 	&__table-side, &__table {
@@ -13,13 +16,13 @@
 	&__table-side {
 		top: 100px;
 		left: -100px;
-		background: #2E3744;
+		background: #664140;
 		width: 100%;
 	}
 
 	&__table {
 		left: 50px;
-		background: #3A424F;
+		background: #8D665B;
 		width: 100%;
 	}
 }

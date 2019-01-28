@@ -20,21 +20,6 @@
       </label>
       <input formControlName="email" type="email" placeholder="Enter your email">
     </div>
-    <div class="input">
-      <label>
-        Confirm <span class="required">*</span>
-        <span *ngIf="parent.get('details').get('confirm').errors && parent.get('details').get('confirm').touched"
-              class="error">
-          <span *ngIf="parent.get('details').get('confirm').hasError('required')">
-            Field is required
-          </span>
-        </span>
-        <span class="error" *ngIf="!parent.get('details').get('confirm').hasError('required') && parent.get('details').touched && parent.get('details').hasError('nomatch')">
-          Emails must match
-        </span>
-      </label>
-      <input formControlName="confirm" type="email" placeholder="Confirm your email">
-    </div>
   </div>
   <div class="section" formGroupName="details">
     <div class="input">
@@ -51,21 +36,6 @@
         </span>
       </label>
       <input formControlName="address" type="text" placeholder="44 Pizza Street">
-    </div>
-    <div class="input">
-      <label>
-        Postcode <span class="required">*</span>
-        <span *ngIf="parent.get('details').get('postcode').errors && parent.get('details').get('postcode').touched"
-              class="error">
-          <span *ngIf="parent.get('details').get('postcode').hasError('required')">
-            Field is required
-          </span>
-          <span *ngIf="parent.get('details').get('postcode').hasError('minlength')">
-            Min of 3 characters
-          </span>
-        </span>
-      </label>
-      <input formControlName="postcode" type="text" placeholder="PI3 3AS">
     </div>
     <div class="input">
       <label>

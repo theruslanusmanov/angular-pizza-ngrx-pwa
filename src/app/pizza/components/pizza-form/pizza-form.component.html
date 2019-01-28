@@ -1,21 +1,17 @@
-<h1>Pizzas</h1>
+<h2>Pizzas</h2>
 <div *ngFor="let pizza of pizzas">
   {{ pizza.id }}
   {{ pizza.name }}
   {{ pizza.price }}
 </div>
-
+<app-pizza-form-steps></app-pizza-form-steps>
 <form (ngSubmit)="onSubmit($event)" [formGroup]="parent">
-    
   <app-pizza-form-details [parent]="parent"></app-pizza-form-details>
-
   <app-pizza-form-creator></app-pizza-form-creator>
-
   <button 
     type="submit" 
     class="button"
     [disabled]="parent.invalid">
     Next
   </button>
-
 </form>

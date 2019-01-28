@@ -1,10 +1,13 @@
 :host {
 	background-color: rgba(248, 250, 234, 0.829);
+	width: 100%;
+	overflow: hidden;
 }
 .pizza-viewer {
-    height: 300px;
+	height: 300px;
 	width: 600px;
 	position: relative;
+
 	
 	&__table-side, &__table {
 		position: absolute;
@@ -16,13 +19,57 @@
 	&__table-side {
 		top: 100px;
 		left: -100px;
-		background: #664140;
+		background: rgb(70, 60, 58);
 		width: 100%;
 	}
 
 	&__table {
 		left: 50px;
-		background: #8D665B;
+		background: rgb(102, 88, 84);
 		width: 100%;
+	}
+}
+
+.pizza {
+	width: 530px;
+	height: 342px;
+	position: absolute;
+	z-index: 1;
+	transform: translate3d(-530px, -282px, 0);
+	transition: transform 0.2s;
+
+	&--active {
+		transform: translate3d(0, -30px, 0);
+	}
+
+	&__board {
+		background: url(./../../../../assets/toppings/board.svg) no-repeat 0 20px;
+		background-size: contain;
+		width: 300px;
+		height: 220px;
+		position: absolute;
+		z-index: 1;
+		top: 30px;
+		left: 150px;
+	}
+
+	&__base {
+		background: url(./../../../../assets/toppings/base.svg) no-repeat;
+		background-size: contain;
+		width: 230px;
+		height: 150px;
+		position: absolute;
+		left: 205px;
+		top: 45px;
+		z-index: 2;
+	}
+
+	&__toppings {
+		width: 352px;
+		height: 190px;
+		position: absolute;
+		right: 42px;
+		top: 46px;
+		z-index: 3;
 	}
 }

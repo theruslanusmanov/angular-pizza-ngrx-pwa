@@ -1,9 +1,9 @@
-<h2>Pizzas</h2>
+<!-- <h2>Pizzas</h2>
 <div *ngFor="let pizza of pizzas">
   {{ pizza.id }}
   {{ pizza.name }}
   {{ pizza.price }}
-</div>
+</div> -->
 <form (ngSubmit)="onSubmit($event)" [formGroup]="parent">
   <app-pizza-form-details [parent]="parent"></app-pizza-form-details>
   <app-pizza-form-creator></app-pizza-form-creator>

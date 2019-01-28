@@ -13,6 +13,7 @@ import { IAppState } from '../../store/state/app.state';
 })
 export class PizzaContainerComponent implements OnInit {
   pizzas$ = this.store.pipe(select(selectPizzaList))
+  public stepAmount = 100 / 3;
 
   form = this.fb.group({
     details: this.fb.group({

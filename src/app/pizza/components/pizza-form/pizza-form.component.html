@@ -4,7 +4,6 @@
   {{ pizza.name }}
   {{ pizza.price }}
 </div>
-<app-pizza-form-steps></app-pizza-form-steps>
 <form (ngSubmit)="onSubmit($event)" [formGroup]="parent">
   <app-pizza-form-details [parent]="parent"></app-pizza-form-details>
   <app-pizza-form-creator></app-pizza-form-creator>

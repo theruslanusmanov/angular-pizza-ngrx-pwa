@@ -1,16 +1,11 @@
 <h1>Pizzas</h1>
 <div *ngFor="let pizza of pizzas">
-  <hr>
-  <h1>Pizzas</h1>
   {{ pizza.id }}
-  <hr>
   {{ pizza.name }}
-  <hr>
   {{ pizza.price }}
-  <hr>
 </div>
 
-<!-- <form (ngSubmit)="onSubmit($event)" [formGroup]="parent">
+<form (ngSubmit)="onSubmit($event)" [formGroup]="parent">
     
   <app-pizza-form-details [parent]="parent"></app-pizza-form-details>
 
@@ -23,4 +18,4 @@
     Next
   </button>
 
-</form> -->
+</form>

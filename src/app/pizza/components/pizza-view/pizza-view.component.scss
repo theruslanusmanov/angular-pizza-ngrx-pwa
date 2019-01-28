@@ -1,0 +1,25 @@
+.pizza-viewer {
+    height: 300px;
+    width: 100%;
+	position: relative;
+	
+	&__table-side, &__table {
+		position: absolute;
+		height: 300px;
+		z-index: 0;
+		transform: skewX(62deg);
+	}
+
+	&__table-side {
+		top: 100px;
+		left: -100px;
+		background: #2E3744;
+		width: 100%;
+	}
+
+	&__table {
+		left: 50px;
+		background: #3A424F;
+		width: 100%;
+	}
+}

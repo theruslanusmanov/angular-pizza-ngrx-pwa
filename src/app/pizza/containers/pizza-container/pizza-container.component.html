@@ -1,5 +1,7 @@
-<app-pizza-view></app-pizza-view>
-<app-pizza-form 
-    [parent]="form"
-    [pizzas]="pizzas$ | async">
-</app-pizza-form>
+<div class="pizza-app">
+    <app-pizza-view></app-pizza-view>
+    <app-pizza-form 
+        [parent]="form"
+        [pizzas]="pizzas$ | async">
+    </app-pizza-form>
+</div>

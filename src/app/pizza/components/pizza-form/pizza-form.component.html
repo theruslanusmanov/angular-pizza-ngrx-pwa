@@ -4,13 +4,15 @@
   {{ pizza.name }}
   {{ pizza.price }}
 </div> -->
-<form (ngSubmit)="onSubmit($event)" [formGroup]="parent">
-  <app-pizza-form-details [parent]="parent"></app-pizza-form-details>
-  <app-pizza-form-creator></app-pizza-form-creator>
-  <button 
-    type="submit" 
-    class="button"
-    [disabled]="parent.invalid">
-    Next
-  </button>
-</form>
+
+<h1>Pizza details</h1>
+<app-pizza-form-details [parent]="parent"></app-pizza-form-details>
+<hr>
+<h1>Pizza creator</h1>
+<app-pizza-form-creator></app-pizza-form-creator>
+<button 
+  type="submit" 
+  class="button"
+  [disabled]="parent.invalid">
+  Next
+</button>

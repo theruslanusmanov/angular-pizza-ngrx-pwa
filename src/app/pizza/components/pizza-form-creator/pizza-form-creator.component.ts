@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { FormGroup } from '@angular/forms';
+import { FormArray } from '@angular/forms';
 
 @Component({
 	selector: 'app-pizza-form-creator',
@@ -6,16 +8,18 @@ import { Component, OnInit } from '@angular/core';
 	styleUrls: ['./pizza-form-creator.component.scss']
 })
 export class PizzaFormCreatorComponent implements OnInit {
-
+	@Input()
+	pizzas: FormArray;
+		
 	toppings = [
 		'anchovy', 'bacon', 'basil', 'chili', 'mozzarella', 'mushroom',
 		'olive', 'onion', 'pepper', 'pepperoni', 'sweetcorn', 'tomato'
 	];
 
 	value: string[] = [];
-  focused: string;
+	focused: string;
 
 	constructor() { }
 
-	ngOnInit() {}
+	ngOnInit() { }
 }

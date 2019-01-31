@@ -1,15 +1,5 @@
-<!-- <h2>Pizzas</h2>
-<div *ngFor="let pizza of pizzas">
-  {{ pizza.id }}
-  {{ pizza.name }}
-  {{ pizza.price }}
-</div> -->
-
-<h1>Pizza details</h1>
 <app-pizza-form-details [parent]="parent"></app-pizza-form-details>
-<hr>
-<h1>Pizza creator</h1>
-<app-pizza-form-creator></app-pizza-form-creator>
+<app-pizza-form-creator [pizzas]="parent.get('pizzas')"></app-pizza-form-creator>
 <button 
   type="submit" 
   class="button"

@@ -1,11 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, forwardRef } from '@angular/core';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR  } from '@angular/forms';
+
+const PIZZA_TOPPINGS_ACCESSOR = {
+  provide: NG_VALUE_ACCESSOR,
+  useExisting: forwardRef(() => PizzaToppingsComponent),
+  multi: true
+};
 
 @Component({
   selector: 'app-pizza-toppings',
+  providers: [PIZZA_TOPPINGS_ACCESSOR],
   templateUrl: './pizza-toppings.component.html',
   styleUrls: ['./pizza-toppings.component.scss']
 })
-export class PizzaToppingsComponent implements OnInit {
+export class PizzaToppingsComponent implements ControlValueAccessor {
   toppings = [
     'anchovy', 'bacon', 'basil', 'chili', 'mozzarella', 'mushroom',
     'olive', 'onion', 'pepper', 'pepperoni', 'sweetcorn', 'tomato'
@@ -16,8 +24,6 @@ export class PizzaToppingsComponent implements OnInit {
 
   private onTouch: Function;
   private onModelChange: Function;
-
-  constructor() { }
 
   registerOnChange(fn) {
     this.onModelChange = fn;
@@ -48,8 +54,4 @@ export class PizzaToppingsComponent implements OnInit {
     this.focused = value;
     this.onTouch();
   }
-  
-  ngOnInit() {
-  }
-
 }

@@ -13,14 +13,8 @@ export const pizzaReducers = (
                 pizzas: action.payload
             };
         }
-        case EPizzaActions.GetToppings: {
-            return {
-                ...state,
-                selectedToppings: action.payload
-            };
-        }
 
         default:
             return state;
     }
-}
+};

@@ -1,5 +1,5 @@
-import { Component, forwardRef } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR  } from '@angular/forms';
+import { Component, Input, forwardRef } from '@angular/core';
+import { FormGroup, ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 const PIZZA_TOPPINGS_ACCESSOR = {
   provide: NG_VALUE_ACCESSOR,
@@ -14,6 +14,9 @@ const PIZZA_TOPPINGS_ACCESSOR = {
   styleUrls: ['./pizza-toppings.component.scss']
 })
 export class PizzaToppingsComponent implements ControlValueAccessor {
+  @Input()
+  parent: FormGroup;
+
   toppings = [
     'anchovy', 'bacon', 'basil', 'chili', 'mozzarella', 'mushroom',
     'olive', 'onion', 'pepper', 'pepperoni', 'sweetcorn', 'tomato'

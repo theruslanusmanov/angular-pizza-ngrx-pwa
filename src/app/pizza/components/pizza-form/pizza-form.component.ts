@@ -9,7 +9,7 @@ import { IPizza } from '../../models/pizza';
 })
 export class PizzaFormComponent implements OnInit {
   @Input()
-  parent: FormGroup;
+  form: FormGroup;
 
   @Input()
   pizzas: IPizza[];

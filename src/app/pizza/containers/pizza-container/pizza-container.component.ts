@@ -22,19 +22,12 @@ export class PizzaContainerComponent implements OnInit {
       phone: ['', Validators.required],
       address: ['', [Validators.required, Validators.minLength(3)]],
     }, { validator: PizzaValidator.checkEmailsMatch }),
-    pizzas: this.fb.array([
-      this.createPizza()
-    ])
+    toppings: this.fb.group({
+      toppings: [[]]
+    })
   });
 
   constructor(private store: Store<IAppState>, private fb: FormBuilder) { }
-
-  createPizza() {
-    return this.fb.group({
-      size: ['small', Validators.required],
-      toppings: [[]]
-    });
-  }
 
   ngOnInit() {
     this.store.dispatch(new GetPizzas());

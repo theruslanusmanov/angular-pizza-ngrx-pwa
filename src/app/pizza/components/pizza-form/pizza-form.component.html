@@ -1,8 +1,13 @@
-<app-pizza-form-details [parent]="parent"></app-pizza-form-details>
-<app-pizza-form-creator [pizzas]="parent.get('pizzas')"></app-pizza-form-creator>
-<button 
-  type="submit" 
-  class="button"
-  [disabled]="parent.invalid">
-  Next
-</button>
+<div>
+  <app-pizza-form-details [parent]="form"></app-pizza-form-details>
+  <div [formGroup]="form.get('toppings')">
+      <app-pizza-toppings formControlName="toppings"></app-pizza-toppings>
+  </div>
+  
+  <button 
+    type="submit" 
+    class="button"
+    [disabled]="form.invalid">
+    Next
+  </button>
+</div>

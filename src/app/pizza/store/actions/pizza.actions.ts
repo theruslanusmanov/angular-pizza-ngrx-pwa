@@ -1,11 +1,9 @@
 import { Action } from '@ngrx/store';
 import { IPizza } from '../../models/pizza';
-import { ITopping } from '../../models/topping.interface';
 
 export enum EPizzaActions {
     GetPizzas = '[Pizza] Get Pizzas',
-    GetPizzasSuccess = '[Pizza] Get Pizzas Success',
-    GetToppings = '[Pizza] Get Toppings'
+    GetPizzasSuccess = '[Pizza] Get Pizzas Success'
 }
 
 export class GetPizzas implements Action {
@@ -17,9 +15,4 @@ export class GetPizzasSuccess implements Action {
     constructor(public payload: IPizza[]) { }
 }
 
-export class GetToppings implements Action {
-    public readonly type = EPizzaActions.GetToppings;
-    constructor(public payload: ITopping[]) { }
-}
-
-export type PizzaActions = GetPizzas | GetPizzasSuccess | GetToppings;
+export type PizzaActions = GetPizzas | GetPizzasSuccess;

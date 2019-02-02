@@ -2,7 +2,7 @@
     <app-pizza-view></app-pizza-view>
     <app-pizza-form-steps [percentage]="stepAmount"></app-pizza-form-steps>
     <app-pizza-form 
-        [parent]="form"
+        [form]="form"
         [pizzas]="pizzas$ | async">
     </app-pizza-form>
 </div>

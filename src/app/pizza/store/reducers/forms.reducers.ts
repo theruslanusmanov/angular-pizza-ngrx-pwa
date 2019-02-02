@@ -1,5 +1,5 @@
 import { initialFormsState, IFormsState } from '../state/forms.state';
-import { FormsActions, EFormsActions } from '../actions/forms.action';
+import { FormsActions, EFormsActions } from '../actions/forms.actions';
 
 export const formsReducers = (
     state = initialFormsState,

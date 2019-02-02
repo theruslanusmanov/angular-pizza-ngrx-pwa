@@ -1,10 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { selectPizzaList } from '../../store/selectors/pizza.selector';
+import { UpdateForm } from '../../store/actions/forms.actions';
 import { GetPizzas } from '../../store/actions/pizza.actions';
 import { FormBuilder, Validators } from '@angular/forms';
 import { PizzaValidator } from '../../validators/pizza.validator';
 import { IAppState } from '../../store/state/app.state';
+import { ITopping } from '../../models/topping.interface';
+import { selectFormsList } from '../../store/selectors/forms.selector';
 
 @Component({
   selector: 'app-pizza-container',
@@ -13,7 +16,11 @@ import { IAppState } from '../../store/state/app.state';
 })
 export class PizzaContainerComponent implements OnInit {
   pizzas$ = this.store.pipe(select(selectPizzaList))
+  forms$ = this.store.pipe(select(selectFormsList));
   public stepAmount = 100 / 3;
+
+  activePizza = 0;
+  total = '0';
 
   form = this.fb.group({
     details: this.fb.group({
@@ -29,7 +36,27 @@ export class PizzaContainerComponent implements OnInit {
 
   constructor(private store: Store<IAppState>, private fb: FormBuilder) { }
 
+  calculateTotal(value) {
+    const price = value.reduce((prev: number, next: any) => {
+      const price = 10;
+      return price;
+    }, 0);
+    this.total = price.toFixed(2);
+  }
+
   ngOnInit() {
     this.store.dispatch(new GetPizzas());
+
+    let toppings: ITopping[] = [{
+        name: 'Sousage',
+        price: 130
+      }];
+    this.form.get('toppings')
+      .valueChanges
+      .subscribe(value => {
+        this.store.dispatch(new UpdateForm(toppings));
+      });
+
+    this.forms$.subscribe(x => console.log(x));
   }
 }

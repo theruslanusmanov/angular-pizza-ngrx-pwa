@@ -1,11 +1,12 @@
-<div>
-  <div>
+<div class="forms-container">
+  <div *ngIf="showFormDetails">
     <app-pizza-form-details [parent]="form"></app-pizza-form-details>
   </div>
-  <div [formGroup]="form.get('toppings')">
+  <div *ngIf="showFormToppings" [formGroup]="form.get('toppings')">
     <app-pizza-toppings formControlName="toppings"></app-pizza-toppings>
   </div>
-  <button type="submit" class="button" [disabled]="form.invalid">
-    Next
-  </button>
 </div>
+<button type="submit" class="button" (click)="onNext($event)">NEXT</button>
+<!-- <button type="submit" class="button" [disabled]="form.invalid">
+    Next
+</button> -->

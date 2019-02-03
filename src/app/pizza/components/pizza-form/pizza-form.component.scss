@@ -5,19 +5,24 @@
     flex-grow: 1;
     box-shadow: 0 1px 54px rgba(0, 0, 0, 0.27);
     height: 100%;
-    padding: 20px 30px;
     overflow-y: scroll;
 }
 
+.forms-container {
+    padding: 20px 30px;
+    
+}
+
 .button {
+    position: fixed;
+    bottom: 0;
     width: 100%;
-    background: #98C550;
+    background: #41946b;
     border: none;
-    padding: 10px 15px;
+    padding: 20px 15px;
     text-align: center;
     font-size: 18px;
     color: rgba(255, 255, 255, 0.9);
-    border-radius: 5px;
     cursor: pointer;
     margin-top: 20px;
     font-family: inherit;

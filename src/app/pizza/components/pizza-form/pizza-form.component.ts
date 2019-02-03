@@ -35,6 +35,11 @@ export class PizzaFormComponent implements OnInit {
       this.showFormToppings = true;
       this.showFormConfirmation = false;
     }
+    if (this.form.get('details').valid && this.form.get('toppings').touched) {
+      this.showFormDetails = false;
+      this.showFormToppings = false;
+      this.showFormConfirmation = true;
+    }
   }
 
   ngOnInit() {
@@ -61,6 +66,11 @@ export class PizzaFormComponent implements OnInit {
       .subscribe(value => {
         if (this.form.get('details').valid) {
           this.store.dispatch(new UpdateForm(value.toppings));
+          let summary: number = 0;
+          value.toppings.forEach(topping => {
+            summary += topping.price;
+          });
+          this.store.dispatch(new UpdateSummary(summary));
           this.store.dispatch(new UpdateSteps(80));
         }
       });

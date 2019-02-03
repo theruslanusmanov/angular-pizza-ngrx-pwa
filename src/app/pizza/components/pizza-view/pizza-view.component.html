@@ -11,11 +11,11 @@
 				*ngFor="let topping of toppings$ | async; let i = index;"
 				[style.zIndex]="i"
 				@drop>
-				<div class="pizza__topping pizza__topping--{{ topping }}"></div>
-				<div class="pizza__topping pizza__topping--{{ topping }}"></div>
-				<div class="pizza__topping pizza__topping--{{ topping }}"></div>
-				<div class="pizza__topping pizza__topping--{{ topping }}"></div>
-				<div class="pizza__topping pizza__topping--{{ topping }}"></div>
+				<div class="pizza__topping pizza__topping--{{ topping.name }}"></div>
+				<div class="pizza__topping pizza__topping--{{ topping.name }}"></div>
+				<div class="pizza__topping pizza__topping--{{ topping.name }}"></div>
+				<div class="pizza__topping pizza__topping--{{ topping.name }}"></div>
+				<div class="pizza__topping pizza__topping--{{ topping.name }}"></div>
 			</div>
 		</div>
 	</div>

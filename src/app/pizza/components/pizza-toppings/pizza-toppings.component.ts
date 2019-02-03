@@ -1,5 +1,6 @@
 import { Component, Input, forwardRef } from '@angular/core';
 import { FormGroup, ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { ITopping } from '../../models/topping.interface';
 
 const PIZZA_TOPPINGS_ACCESSOR = {
   provide: NG_VALUE_ACCESSOR,
@@ -17,13 +18,23 @@ export class PizzaToppingsComponent implements ControlValueAccessor {
   @Input()
   parent: FormGroup;
 
-  toppings = [
-    'anchovy', 'bacon', 'basil', 'chili', 'mozzarella', 'mushroom',
-    'olive', 'onion', 'pepper', 'pepperoni', 'sweetcorn', 'tomato'
+  toppings: ITopping[] = [
+    { name: 'anchovy', price: 1 },
+    { name: 'bacon', price: 1 },
+    { name: 'basil', price: 1 },
+    { name: 'chili', price: 1 },
+    { name: 'mozzarella', price: 1 },
+    { name: 'mushroom', price: 1 },
+    { name: 'olive', price: 1 },
+    { name: 'onion', price: 1 },
+    { name: 'pepper', price: 1 },
+    { name: 'pepperoni', price: 1 },
+    { name: 'sweetcorn', price: 1 },
+    { name: 'tomato', price: 1 },
   ];
 
-  value: string[] = [];
-  focused: string;
+  value: ITopping[] = [];
+  focused: ITopping;
 
   private onTouch: Function;
   private onModelChange: Function;
@@ -40,20 +51,20 @@ export class PizzaToppingsComponent implements ControlValueAccessor {
     this.value = value;
   }
 
-  updateTopping(topping: string) {
+  updateTopping(topping: ITopping) {
     if (this.value.includes(topping)) {
-      this.value = this.value.filter((x: string) => topping !== x);
+      this.value = this.value.filter((x: ITopping) => topping !== x);
     } else {
       this.value = this.value.concat([topping]);
     }
     this.onModelChange(this.value);
   }
 
-  onBlur(value: string) {
-    this.focused = '';
+  onBlur(value: ITopping) {
+    this.focused = null;
   }
 
-  onFocus(value: string) {
+  onFocus(value: ITopping) {
     this.focused = value;
     this.onTouch();
   }

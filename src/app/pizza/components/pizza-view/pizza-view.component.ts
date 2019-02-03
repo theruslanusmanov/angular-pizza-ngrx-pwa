@@ -26,5 +26,5 @@ export const DROP_ANIMATION = trigger('drop', [
 export class PizzaViewComponent {
   toppings$: Observable<ITopping[]> = this.store.pipe(select(selectFormsList));
 
-  constructor(private store: Store<IAppState>) { }
+  constructor(private store: Store<IAppState>) {}
 }

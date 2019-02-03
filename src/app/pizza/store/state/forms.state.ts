@@ -7,7 +7,7 @@ export interface IFormsState {
 }
 
 export const initialFormsState: IFormsState = {
-    toppings: null,
+    toppings: [],
     steps: null,
     summary: 0
 };

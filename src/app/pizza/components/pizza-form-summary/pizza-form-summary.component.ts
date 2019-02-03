@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { select, Store } from '@ngrx/store';
 import { IAppState } from '../../store/state/app.state';
 import { selectFormSummary } from '../../store/selectors/forms.selector';
+import { UpdateSteps } from '../../store/actions/forms.actions';
 
 @Component({
   selector: 'app-pizza-form-summary',
@@ -11,7 +12,7 @@ import { selectFormSummary } from '../../store/selectors/forms.selector';
 })
 export class PizzaFormSummaryComponent implements OnInit {
   summary$: Observable<number> = this.store.pipe(select(selectFormSummary));
-  price = 1000;
+  price;
   
   constructor(private store: Store<IAppState>) { }
 

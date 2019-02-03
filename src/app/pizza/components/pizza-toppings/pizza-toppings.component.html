@@ -12,7 +12,7 @@
       (change)="updateTopping(topping)"
       (focus)="onFocus(topping)"
       [checked]="value.includes(topping)">
-    <span class="pizza-topping__icon pizza-topping__icon--{{ topping }}"></span>
-    {{ topping | titlecase }}
+    <span class="pizza-topping__icon pizza-topping__icon--{{ topping.name }}"></span>
+    {{ topping.name | titlecase }}
   </label>
 </div>

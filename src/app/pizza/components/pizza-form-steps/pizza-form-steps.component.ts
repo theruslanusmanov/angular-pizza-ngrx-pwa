@@ -11,7 +11,6 @@ import { UpdateSteps } from '../../store/actions/forms.actions';
   styleUrls: ['./pizza-form-steps.component.scss']
 })
 export class PizzaFormStepsComponent implements OnInit {
-  @Input()
   public percentage: number;
   steps$: Observable<number> = this.store.pipe(select(selectFormSteps));
 

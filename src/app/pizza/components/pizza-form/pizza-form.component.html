@@ -1,12 +1,11 @@
 <div>
-  <app-pizza-form-details [parent]="form"></app-pizza-form-details>
-  <div [formGroup]="form.get('toppings')">
-      <app-pizza-toppings formControlName="toppings"></app-pizza-toppings>
+  <div>
+    <app-pizza-form-details [parent]="form"></app-pizza-form-details>
   </div>
-  <button 
-    type="submit" 
-    class="button"
-    [disabled]="form.invalid">
+  <div [formGroup]="form.get('toppings')">
+    <app-pizza-toppings formControlName="toppings"></app-pizza-toppings>
+  </div>
+  <button type="submit" class="button" [disabled]="form.invalid">
     Next
   </button>
 </div>

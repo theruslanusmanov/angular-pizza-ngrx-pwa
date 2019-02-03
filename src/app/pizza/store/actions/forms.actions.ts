@@ -2,7 +2,8 @@ import { Action } from '@ngrx/store';
 import { ITopping } from '../../models/topping.interface';
 
 export enum EFormsActions {
-    UpdateForm = '[Forms] Update Form'
+    UpdateForm = '[Forms] Update Form',
+    UpdateSteps = '[Forms] Update Steps'
 }
 
 export class UpdateForm implements Action {
@@ -10,4 +11,9 @@ export class UpdateForm implements Action {
     constructor(public payload: ITopping[]) {}
 }
 
-export type FormsActions = UpdateForm;
+export class UpdateSteps implements Action {
+    public readonly type = EFormsActions.UpdateSteps;
+    constructor(public payload: number) {}
+}
+
+export type FormsActions = UpdateForm | UpdateSteps;

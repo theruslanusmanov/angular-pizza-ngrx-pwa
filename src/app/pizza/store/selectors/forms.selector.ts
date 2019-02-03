@@ -9,3 +9,8 @@ export const selectFormsList = createSelector(
   selectForms,
   (state: IFormsState) => state.toppings
 );
+
+export const selectFormSteps = createSelector(
+  selectForms,
+  (state: IFormsState) => state.steps
+);

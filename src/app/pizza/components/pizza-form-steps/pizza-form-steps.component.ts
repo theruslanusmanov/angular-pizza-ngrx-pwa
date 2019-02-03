@@ -1,4 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { selectFormSteps } from '../../store/selectors/forms.selector';
+import { select, Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { IAppState } from '../../store/state/app.state';
+import { UpdateSteps } from '../../store/actions/forms.actions';
 
 @Component({
   selector: 'app-pizza-form-steps',
@@ -8,12 +13,12 @@ import { Component, OnInit, Input } from '@angular/core';
 export class PizzaFormStepsComponent implements OnInit {
   @Input()
   public percentage: number;
+  steps$: Observable<number> = this.store.pipe(select(selectFormSteps));
 
-  constructor() { }
+  constructor(private store: Store<IAppState>) { }
 
   ngOnInit() {
-    if (!this.percentage) {
-      this.percentage = 0;
-    }
+    this.store.dispatch(new UpdateSteps(10));
+    this.steps$.subscribe(value => this.percentage = value);
   }
 }

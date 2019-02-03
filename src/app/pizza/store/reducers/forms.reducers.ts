@@ -16,6 +16,11 @@ export const formsReducers = (
                 ...state,
                 steps: action.payload
             }
+        case EFormsActions.UpdateSummary: 
+            return {
+                ...state,
+                summary: action.payload
+            }
         default:
             return state;
     }

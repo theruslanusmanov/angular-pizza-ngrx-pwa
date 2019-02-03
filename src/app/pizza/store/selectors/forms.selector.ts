@@ -14,3 +14,8 @@ export const selectFormSteps = createSelector(
   selectForms,
   (state: IFormsState) => state.steps
 );
+
+export const selectFormSummary = createSelector(
+  selectForms,
+  (state: IFormsState) => state.summary
+);

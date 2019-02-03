@@ -1,11 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { PizzaValidator } from '../../validators/pizza.validator';
-import { Store, select } from '@ngrx/store';
+import { Store } from '@ngrx/store';
 import { IAppState } from '../../store/state/app.state';
-import { UpdateForm, UpdateSteps } from '../../store/actions/forms.actions';
-import { selectFormSteps } from '../../store/selectors/forms.selector';
-import { Observable } from 'rxjs';
+import { UpdateForm, UpdateSteps, UpdateSummary } from '../../store/actions/forms.actions';
 
 @Component({
   selector: 'app-pizza-form',
@@ -13,9 +11,9 @@ import { Observable } from 'rxjs';
   styleUrls: ['./pizza-form.component.scss']
 })
 export class PizzaFormComponent implements OnInit {
-  showFormDetails = false;
+  showFormDetails = true;
   showFormToppings = false;
-  showFormConfirmation = true;
+  showFormConfirmation = false;
 
   form: FormGroup = this.fb.group({
     details: this.fb.group({
@@ -35,6 +33,7 @@ export class PizzaFormComponent implements OnInit {
     if (this.form.get('details').valid) {
       this.showFormDetails = false;
       this.showFormToppings = true;
+      this.showFormConfirmation = false;
     }
   }
 

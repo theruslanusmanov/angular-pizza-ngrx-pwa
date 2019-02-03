@@ -13,8 +13,9 @@ import { Observable } from 'rxjs';
   styleUrls: ['./pizza-form.component.scss']
 })
 export class PizzaFormComponent implements OnInit {
-  showFormDetails = true;
+  showFormDetails = false;
   showFormToppings = false;
+  showFormConfirmation = true;
 
   form: FormGroup = this.fb.group({
     details: this.fb.group({

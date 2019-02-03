@@ -5,6 +5,9 @@
   <div *ngIf="showFormToppings" [formGroup]="form.get('toppings')">
     <app-pizza-toppings formControlName="toppings"></app-pizza-toppings>
   </div>
+  <div *ngIf="showFormConfirmation">
+    <app-pizza-form-summary></app-pizza-form-summary>
+  </div>
 </div>
 <button type="submit" class="button" (click)="onNext($event)">NEXT</button>
 <!-- <button type="submit" class="button" [disabled]="form.invalid">

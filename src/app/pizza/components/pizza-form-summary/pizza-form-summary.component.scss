@@ -1,0 +1,21 @@
+.button {
+    bottom: 0;
+    width: 100%;
+    background: #41946b;
+    border: none;
+    padding: 20px 15px;
+    text-align: center;
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.9);
+    cursor: pointer;
+    margin-top: 20px;
+    font-family: inherit;
+    border-radius: 3px;
+
+    &:disabled {
+      background: rgba(0, 0, 0, 0.1);
+      color: rgba(0, 0, 0, 0.4);
+      cursor: not-allowed;
+    }
+}
+  

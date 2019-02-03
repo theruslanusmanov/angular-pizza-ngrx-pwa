@@ -3,7 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { PizzaValidator } from '../../validators/pizza.validator';
 import { Store, select } from '@ngrx/store';
 import { IAppState } from '../../store/state/app.state';
-import { UpdateForm } from '../../store/actions/forms.actions';
+import { UpdateForm, UpdateSteps } from '../../store/actions/forms.actions';
 import { selectFormsList } from '../../store/selectors/forms.selector';
 
 @Component({
@@ -27,10 +27,27 @@ export class PizzaFormComponent implements OnInit {
   constructor(private store: Store<IAppState>, private fb: FormBuilder) { }
 
   ngOnInit() {
+    this.form.get('details')
+      .valueChanges
+      .subscribe(inputs => {
+        if (inputs.name) {
+          this.store.dispatch(new UpdateSteps(20));
+        }
+        if (inputs.email) {
+          this.store.dispatch(new UpdateSteps(30));
+        }
+        if (inputs.address) {
+          this.store.dispatch(new UpdateSteps(40));
+        }
+        if (inputs.phone) {
+          this.store.dispatch(new UpdateSteps(50));
+        }
+      })
     this.form.get('toppings')
       .valueChanges
       .subscribe(value => {
         this.store.dispatch(new UpdateForm(value.toppings));
+        this.store.dispatch(new UpdateSteps(80));
       });
   }
 }

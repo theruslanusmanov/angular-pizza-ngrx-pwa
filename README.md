@@ -1,10 +1,47 @@
 # PizzaPwa
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.4.
-### User details
+##### Work in progress
+## User details
 ![Page one](https://raw.githubusercontent.com/owlruslan/pizza-pwa/master/page_1.gif "Page one")
-### Pizz creator
+## Pizza creator
 ![Page two](https://raw.githubusercontent.com/owlruslan/pizza-pwa/master/page_2.gif "Page two")
+
+### Features
+
+* Angular v7
+* NGRX
+* Component architecture
+* Reactive Form APIs
+* FormGroups
+* FormControls
+* ValueChanges Observable
+* Custom FormControls + ControlValueAccessor
+
+## Structure
+```
+app.module.ts
+└── pizza-module.ts
+    ├── components
+    │   ├── pizza-form
+    │   ├── pizza-form-details
+    │   ├── pizza-form-steps
+    │   ├── pizza-form-summary
+    │   ├── pizza-price
+    │   ├── pizza-toppings
+    │   └── pizza-view
+    ├── containers
+    │   └── pizza-container
+    ├── models
+    ├── services
+    ├── store
+    │   ├── actions
+    │   ├── effects
+    │   ├── reducers
+    │   ├── selectors
+    │   └── state
+    └── validators
+```
 
 ## Development server
 

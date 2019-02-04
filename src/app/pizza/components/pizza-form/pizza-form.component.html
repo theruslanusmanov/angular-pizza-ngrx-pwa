@@ -9,7 +9,4 @@
     <app-pizza-form-summary></app-pizza-form-summary>
   </div>
 </div>
-<button type="submit" class="button" (click)="onNext($event)">NEXT</button>
-<!-- <button type="submit" class="button" [disabled]="form.invalid">
-    Next
-</button> -->
+<button *ngIf="!showFormConfirmation" type="submit" class="button" (click)="onNext($event)" [disabled]="form.invalid">NEXT</button>

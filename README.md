@@ -3,6 +3,8 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.4.
 
 ![Screenshot](https://raw.githubusercontent.com/owlruslan/pizza-pwa/master/screenshot.png "Screenshot")
+![Page one](https://raw.githubusercontent.com/owlruslan/pizza-pwa/master/page_1.gif "Page one")
+![Page two](https://raw.githubusercontent.com/owlruslan/pizza-pwa/master/page_2.gif "Page two")
 
 ## Development server
 

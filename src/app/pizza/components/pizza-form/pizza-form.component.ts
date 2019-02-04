@@ -40,9 +40,6 @@ export class PizzaFormComponent implements OnInit {
       this.showFormToppings = false;
       this.showFormConfirmation = true;
     }
-    if (this.showFormConfirmation) {
-      // Show back button
-    }
   }
 
   ngOnInit() {

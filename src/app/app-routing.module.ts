@@ -3,8 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { PizzaContainerComponent } from './pizza/containers/pizza-container/pizza-container.component';
 
 const routes: Routes = [
-    { path: 'pizzas', component: PizzaContainerComponent },
-    { path: '', redirectTo: '/pizzas', pathMatch: 'prefix' }
+    { path: '', component: PizzaContainerComponent },
 ];
 
 @NgModule({

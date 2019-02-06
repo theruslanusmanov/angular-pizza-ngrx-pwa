@@ -3,13 +3,17 @@ node_js:
   - "11"
 dist: trusty
 sudo: required
-branches:
-  only:
-  - master
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN # Set in the settings page of your repository, as a secure variable
+  keep-history: true
+  local-dir: dist/angular-pizza-ngrx-pwa
+  on:
+    branch: master
 before_script:
   - npm install -g @angular/cli
 script:
 # - ng lint
 # - ng test --watch=false --browsers=ChromeHeadless
-- ng build --prod --base-href https://owlruslan.github.io/angular-pizza-ngrx-pwa/ 
-- mv dist/index.html dist/404.html
+- ng build

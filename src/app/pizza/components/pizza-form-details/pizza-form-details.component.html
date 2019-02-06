@@ -4,7 +4,7 @@
       <label>
         Name <span class="required">*</span>
         <span *ngIf="parent.get('details').get('name').hasError('required') && parent.get('details').get('name').touched"
-              class="error">
+          class="error">
           Field is required
         </span>
       </label>
@@ -13,8 +13,9 @@
     <div class="input">
       <label>
         Email <span class="required">*</span>
-        <span *ngIf="parent.get('details').get('email').errors && parent.get('details').get('email').touched"
-              class="error">
+        <span *ngIf="parent.get('details').get('email').hasError('required') 
+          && parent.get('details').get('email').touched || parent.get('details').get('email').hasError('email')"
+          class="error">
           Field is required
         </span>
       </label>
@@ -25,8 +26,7 @@
     <div class="input">
       <label>
         Address <span class="required">*</span>
-        <span *ngIf="parent.get('details').get('address').errors && parent.get('details').get('address').touched"
-              class="error">
+        <span *ngIf="parent.get('details').get('address').errors && parent.get('details').get('address').touched" class="error">
           <span *ngIf="parent.get('details').get('address').hasError('required')">
             Field is required
           </span>
@@ -40,8 +40,7 @@
     <div class="input">
       <label>
         Contact Number <span class="required">*</span>
-        <span *ngIf="parent.get('details').get('phone').errors && parent.get('details').get('phone').touched"
-              class="error">
+        <span *ngIf="parent.get('details').get('phone').errors && parent.get('details').get('phone').touched" class="error">
           Field is required
         </span>
       </label>

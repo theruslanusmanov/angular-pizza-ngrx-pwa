@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { PizzaValidator } from '../../validators/pizza.validator';
 import { Store } from '@ngrx/store';
 import { IAppState } from '../../store/state/app.state';
 import { UpdateForm, UpdateSteps, UpdateSummary } from '../../store/actions/forms.actions';
@@ -18,10 +17,10 @@ export class PizzaFormComponent implements OnInit {
   form: FormGroup = this.fb.group({
     details: this.fb.group({
       name: ['', Validators.required],
-      email: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
       phone: ['', Validators.required],
       address: ['', [Validators.required, Validators.minLength(3)]],
-    }, { validator: PizzaValidator.checkEmailsMatch }),
+    }),
     toppings: this.fb.group({
       toppings: [[]]
     })

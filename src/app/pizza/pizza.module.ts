@@ -9,7 +9,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PizzaFormDetailsComponent } from './components/pizza-form-details/pizza-form-details.component';
 import { PizzaFormSummaryComponent } from './components/pizza-form-summary/pizza-form-summary.component';
-import { EffectsModule } from '@ngrx/effects';
 import { appReducers } from './store/reducers/app.reducers';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { PizzaFormStepsComponent } from './components/pizza-form-steps/pizza-form-steps.component';
@@ -34,7 +33,6 @@ import { PizzaPriceComponent } from './components/pizza-price/pizza-price.compon
     BrowserAnimationsModule,
     HttpClientModule,
     StoreModule.forRoot(appReducers),
-    StoreRouterConnectingModule.forRoot({ stateKey: 'router' }),
   ],
   exports: [
     PizzaContainerComponent

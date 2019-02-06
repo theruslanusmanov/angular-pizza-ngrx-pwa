@@ -2,10 +2,10 @@ import { EPizzaActions } from './../actions/pizza.actions';
 import { PizzaActions } from '../actions/pizza.actions';
 import { initialPizzaState, IPizzaState } from '../state/pizza.state';
 
-export const pizzaReducers = (
+export function pizzaReducers (
     state = initialPizzaState,
     action: PizzaActions
-): IPizzaState => {
+): IPizzaState {
     switch (action.type) {
         case EPizzaActions.GetPizzasSuccess: {
             return {
@@ -17,4 +17,4 @@ export const pizzaReducers = (
         default:
             return state;
     }
-};
+}

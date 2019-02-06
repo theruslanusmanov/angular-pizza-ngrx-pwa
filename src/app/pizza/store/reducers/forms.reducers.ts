@@ -1,10 +1,10 @@
 import { initialFormsState, IFormsState } from '../state/forms.state';
 import { FormsActions, EFormsActions } from '../actions/forms.actions';
 
-export const formsReducers = (
+export function formsReducers (
     state = initialFormsState,
     action: FormsActions
-): IFormsState => {
+): IFormsState {
     switch (action.type) {
         case EFormsActions.UpdateForm:
             return {
@@ -24,4 +24,4 @@ export const formsReducers = (
         default:
             return state;
     }
-};
+}

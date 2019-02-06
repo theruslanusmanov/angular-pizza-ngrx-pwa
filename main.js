@@ -42,8 +42,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var routes = [
-    { path: 'pizzas', component: _pizza_containers_pizza_container_pizza_container_component__WEBPACK_IMPORTED_MODULE_3__["PizzaContainerComponent"] },
-    { path: '', redirectTo: '/pizzas', pathMatch: 'prefix' }
+    { path: '', component: _pizza_containers_pizza_container_pizza_container_component__WEBPACK_IMPORTED_MODULE_3__["PizzaContainerComponent"] },
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {

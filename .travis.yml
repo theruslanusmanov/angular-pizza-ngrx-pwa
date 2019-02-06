@@ -11,4 +11,5 @@ before_script:
 script:
 # - ng lint
 # - ng test --watch=false --browsers=ChromeHeadless
-- ng build --prod --base-href https://owlruslan.github.io/angular-pizza-ngrx-pwa/ && mv ./dist/index.html ./dist/404.html
+- ng build --prod --base-href https://owlruslan.github.io/angular-pizza-ngrx-pwa/ 
+- mv ./dist/index.html ./dist/404.html

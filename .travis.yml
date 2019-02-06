@@ -20,7 +20,7 @@ install:
   - npm install
 
 script:
-  - yarn build --base-href https://owlruslan.github.io/angular-pizza-ngrx-pwa/
+  - yarn build
 deploy:
   provider: pages
   skip_cleanup: true

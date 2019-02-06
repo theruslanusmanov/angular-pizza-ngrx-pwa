@@ -152,7 +152,7 @@ var AppModule = /** @class */ (function () {
     AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
             declarations: [
-                _app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"],
+                _app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -180,7 +180,7 @@ var AppModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<form [formGroup]=\"parent\">\n  <div class=\"section\" formGroupName=\"details\">\n    <div class=\"input\">\n      <label>\n        Name <span class=\"required\">*</span>\n        <span *ngIf=\"parent.get('details').get('name').hasError('required') && parent.get('details').get('name').touched\"\n              class=\"error\">\n          Field is required\n        </span>\n      </label>\n      <input formControlName=\"name\" type=\"text\" placeholder=\"John Smith\">\n    </div>\n    <div class=\"input\">\n      <label>\n        Email <span class=\"required\">*</span>\n        <span *ngIf=\"parent.get('details').get('email').errors && parent.get('details').get('email').touched\"\n              class=\"error\">\n          Field is required\n        </span>\n      </label>\n      <input formControlName=\"email\" type=\"email\" placeholder=\"Enter your email\">\n    </div>\n  </div>\n  <div class=\"section\" formGroupName=\"details\">\n    <div class=\"input\">\n      <label>\n        Address <span class=\"required\">*</span>\n        <span *ngIf=\"parent.get('details').get('address').errors && parent.get('details').get('address').touched\"\n              class=\"error\">\n          <span *ngIf=\"parent.get('details').get('address').hasError('required')\">\n            Field is required\n          </span>\n          <span *ngIf=\"parent.get('details').get('address').hasError('minlength')\">\n            Min of 3 characters\n          </span>\n        </span>\n      </label>\n      <input formControlName=\"address\" type=\"text\" placeholder=\"44 Pizza Street\">\n    </div>\n    <div class=\"input\">\n      <label>\n        Contact Number <span class=\"required\">*</span>\n        <span *ngIf=\"parent.get('details').get('phone').errors && parent.get('details').get('phone').touched\"\n              class=\"error\">\n          Field is required\n        </span>\n      </label>\n      <input formControlName=\"phone\" type=\"text\" placeholder=\"01234 567 890\">\n    </div>\n  </div>\n</form>"
+module.exports = "<form (ngSubmit)=\"onSubmit($event)\" [formGroup]=\"parent\">\n  <div class=\"section\" formGroupName=\"details\">\n    <div class=\"input\">\n      <label>\n        Name <span class=\"required\">*</span>\n        <span *ngIf=\"parent.get('details').get('name').hasError('required') && parent.get('details').get('name').touched\"\n              class=\"error\">\n          Field is required\n        </span>\n      </label>\n      <input formControlName=\"name\" type=\"text\" placeholder=\"John Smith\">\n    </div>\n    <div class=\"input\">\n      <label>\n        Email <span class=\"required\">*</span>\n        <span *ngIf=\"parent.get('details').get('email').errors && parent.get('details').get('email').touched\"\n              class=\"error\">\n          Field is required\n        </span>\n      </label>\n      <input formControlName=\"email\" type=\"email\" placeholder=\"Enter your email\">\n    </div>\n  </div>\n  <div class=\"section\" formGroupName=\"details\">\n    <div class=\"input\">\n      <label>\n        Address <span class=\"required\">*</span>\n        <span *ngIf=\"parent.get('details').get('address').errors && parent.get('details').get('address').touched\"\n              class=\"error\">\n          <span *ngIf=\"parent.get('details').get('address').hasError('required')\">\n            Field is required\n          </span>\n          <span *ngIf=\"parent.get('details').get('address').hasError('minlength')\">\n            Min of 3 characters\n          </span>\n        </span>\n      </label>\n      <input formControlName=\"address\" type=\"text\" placeholder=\"44 Pizza Street\">\n    </div>\n    <div class=\"input\">\n      <label>\n        Contact Number <span class=\"required\">*</span>\n        <span *ngIf=\"parent.get('details').get('phone').errors && parent.get('details').get('phone').touched\"\n              class=\"error\">\n          Field is required\n        </span>\n      </label>\n      <input formControlName=\"phone\" type=\"text\" placeholder=\"01234 567 890\">\n    </div>\n  </div>\n</form>"
 
 /***/ }),
 
@@ -403,8 +403,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
-/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm5/store.js");
-/* harmony import */ var _store_actions_forms_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../store/actions/forms.actions */ "./src/app/pizza/store/actions/forms.actions.ts");
+/* harmony import */ var _validators_pizza_validator__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../validators/pizza.validator */ "./src/app/pizza/validators/pizza.validator.ts");
+/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm5/store.js");
+/* harmony import */ var _store_actions_forms_actions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../store/actions/forms.actions */ "./src/app/pizza/store/actions/forms.actions.ts");
+
 
 
 
@@ -423,7 +425,7 @@ var PizzaFormComponent = /** @class */ (function () {
                 email: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
                 phone: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
                 address: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].minLength(3)]],
-            }),
+            }, { validator: _validators_pizza_validator__WEBPACK_IMPORTED_MODULE_3__["PizzaValidator"].checkEmailsMatch }),
             toppings: this.fb.group({
                 toppings: [[]]
             })
@@ -448,16 +450,16 @@ var PizzaFormComponent = /** @class */ (function () {
             .valueChanges
             .subscribe(function (inputs) {
             if (inputs.name) {
-                _this.store.dispatch(new _store_actions_forms_actions__WEBPACK_IMPORTED_MODULE_4__["UpdateSteps"](30));
+                _this.store.dispatch(new _store_actions_forms_actions__WEBPACK_IMPORTED_MODULE_5__["UpdateSteps"](30));
             }
             if (inputs.name && inputs.email) {
-                _this.store.dispatch(new _store_actions_forms_actions__WEBPACK_IMPORTED_MODULE_4__["UpdateSteps"](40));
+                _this.store.dispatch(new _store_actions_forms_actions__WEBPACK_IMPORTED_MODULE_5__["UpdateSteps"](40));
             }
             if (inputs.name && inputs.email && inputs.address) {
-                _this.store.dispatch(new _store_actions_forms_actions__WEBPACK_IMPORTED_MODULE_4__["UpdateSteps"](50));
+                _this.store.dispatch(new _store_actions_forms_actions__WEBPACK_IMPORTED_MODULE_5__["UpdateSteps"](50));
             }
             if (inputs.name && inputs.email && inputs.address && inputs.phone) {
-                _this.store.dispatch(new _store_actions_forms_actions__WEBPACK_IMPORTED_MODULE_4__["UpdateSteps"](60));
+                _this.store.dispatch(new _store_actions_forms_actions__WEBPACK_IMPORTED_MODULE_5__["UpdateSteps"](60));
             }
         });
         // On toppings form section actions
@@ -465,13 +467,13 @@ var PizzaFormComponent = /** @class */ (function () {
             .valueChanges
             .subscribe(function (value) {
             if (_this.form.get('details').valid) {
-                _this.store.dispatch(new _store_actions_forms_actions__WEBPACK_IMPORTED_MODULE_4__["UpdateForm"](value.toppings));
+                _this.store.dispatch(new _store_actions_forms_actions__WEBPACK_IMPORTED_MODULE_5__["UpdateForm"](value.toppings));
                 var summary_1 = 0;
                 value.toppings.forEach(function (topping) {
                     summary_1 += topping.price;
                 });
-                _this.store.dispatch(new _store_actions_forms_actions__WEBPACK_IMPORTED_MODULE_4__["UpdateSummary"](summary_1));
-                _this.store.dispatch(new _store_actions_forms_actions__WEBPACK_IMPORTED_MODULE_4__["UpdateSteps"](80));
+                _this.store.dispatch(new _store_actions_forms_actions__WEBPACK_IMPORTED_MODULE_5__["UpdateSummary"](summary_1));
+                _this.store.dispatch(new _store_actions_forms_actions__WEBPACK_IMPORTED_MODULE_5__["UpdateSteps"](80));
             }
         });
     };
@@ -481,7 +483,7 @@ var PizzaFormComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./pizza-form.component.html */ "./src/app/pizza/components/pizza-form/pizza-form.component.html"),
             styles: [__webpack_require__(/*! ./pizza-form.component.scss */ "./src/app/pizza/components/pizza-form/pizza-form.component.scss")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ngrx_store__WEBPACK_IMPORTED_MODULE_3__["Store"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ngrx_store__WEBPACK_IMPORTED_MODULE_4__["Store"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"]])
     ], PizzaFormComponent);
     return PizzaFormComponent;
 }());
@@ -669,7 +671,7 @@ var PizzaToppingsComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"pizza-viewer\">\n\t<div class=\"pizza-viewer__table-side\"></div>\n\t<div class=\"pizza-viewer__table\"></div>\n\t<div \n\t\tclass=\"pizza--active\">\n\t\t<div class=\"pizza__board\"></div>\n\t\t<div class=\"pizza__base\"></div>\n\t\t<div class=\"pizza__toppings\">\n\t\t\t<div \n\t\t\t\t*ngFor=\"let topping of toppings$ | async; let i = index;\"\n\t\t\t\t[style.zIndex]=\"i\"\n\t\t\t\t@drop>\n\t\t\t\t<div class=\"pizza__topping pizza__topping--{{ topping.name }}\"></div>\n\t\t\t\t<div class=\"pizza__topping pizza__topping--{{ topping.name }}\"></div>\n\t\t\t\t<div class=\"pizza__topping pizza__topping--{{ topping.name }}\"></div>\n\t\t\t\t<div class=\"pizza__topping pizza__topping--{{ topping.name }}\"></div>\n\t\t\t\t<div class=\"pizza__topping pizza__topping--{{ topping.name }}\"></div>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n</div>\n<app-pizza-price></app-pizza-price>\n"
+module.exports = "<div class=\"pizza-viewer\">\n\t<div class=\"pizza-viewer__table-side\"></div>\n\t<div class=\"pizza-viewer__table\"></div>\n\t{{ activePizza }}\n\t<div \n\t\tclass=\"pizza--active\">\n\t\t<div class=\"pizza__board\"></div>\n\t\t<div class=\"pizza__base\"></div>\n\t\t<div class=\"pizza__toppings\">\n\t\t\t<div \n\t\t\t\t*ngFor=\"let topping of toppings$ | async; let i = index;\"\n\t\t\t\t[style.zIndex]=\"i\"\n\t\t\t\t@drop>\n\t\t\t\t<div class=\"pizza__topping pizza__topping--{{ topping.name }}\"></div>\n\t\t\t\t<div class=\"pizza__topping pizza__topping--{{ topping.name }}\"></div>\n\t\t\t\t<div class=\"pizza__topping pizza__topping--{{ topping.name }}\"></div>\n\t\t\t\t<div class=\"pizza__topping pizza__topping--{{ topping.name }}\"></div>\n\t\t\t\t<div class=\"pizza__topping pizza__topping--{{ topping.name }}\"></div>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n</div>\n<app-pizza-price></app-pizza-price>\n"
 
 /***/ }),
 
@@ -811,10 +813,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
 /* harmony import */ var _components_pizza_form_details_pizza_form_details_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/pizza-form-details/pizza-form-details.component */ "./src/app/pizza/components/pizza-form-details/pizza-form-details.component.ts");
 /* harmony import */ var _components_pizza_form_summary_pizza_form_summary_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/pizza-form-summary/pizza-form-summary.component */ "./src/app/pizza/components/pizza-form-summary/pizza-form-summary.component.ts");
-/* harmony import */ var _store_reducers_app_reducers__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./store/reducers/app.reducers */ "./src/app/pizza/store/reducers/app.reducers.ts");
-/* harmony import */ var _components_pizza_form_steps_pizza_form_steps_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/pizza-form-steps/pizza-form-steps.component */ "./src/app/pizza/components/pizza-form-steps/pizza-form-steps.component.ts");
-/* harmony import */ var _components_pizza_toppings_pizza_toppings_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/pizza-toppings/pizza-toppings.component */ "./src/app/pizza/components/pizza-toppings/pizza-toppings.component.ts");
-/* harmony import */ var _components_pizza_price_pizza_price_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/pizza-price/pizza-price.component */ "./src/app/pizza/components/pizza-price/pizza-price.component.ts");
+/* harmony import */ var _store_effects_pizza_effects__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./store/effects/pizza.effects */ "./src/app/pizza/store/effects/pizza.effects.ts");
+/* harmony import */ var _ngrx_effects__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @ngrx/effects */ "./node_modules/@ngrx/effects/fesm5/effects.js");
+/* harmony import */ var _services_pizza_service__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./services/pizza.service */ "./src/app/pizza/services/pizza.service.ts");
+/* harmony import */ var _store_reducers_app_reducers__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./store/reducers/app.reducers */ "./src/app/pizza/store/reducers/app.reducers.ts");
+/* harmony import */ var _ngrx_router_store__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @ngrx/router-store */ "./node_modules/@ngrx/router-store/fesm5/router-store.js");
+/* harmony import */ var _components_pizza_form_steps_pizza_form_steps_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./components/pizza-form-steps/pizza-form-steps.component */ "./src/app/pizza/components/pizza-form-steps/pizza-form-steps.component.ts");
+/* harmony import */ var _components_pizza_toppings_pizza_toppings_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./components/pizza-toppings/pizza-toppings.component */ "./src/app/pizza/components/pizza-toppings/pizza-toppings.component.ts");
+/* harmony import */ var _components_pizza_price_pizza_price_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./components/pizza-price/pizza-price.component */ "./src/app/pizza/components/pizza-price/pizza-price.component.ts");
+
+
+
+
 
 
 
@@ -839,26 +849,61 @@ var PizzaModule = /** @class */ (function () {
             declarations: [
                 _containers_pizza_container_pizza_container_component__WEBPACK_IMPORTED_MODULE_5__["PizzaContainerComponent"],
                 _components_pizza_view_pizza_view_component__WEBPACK_IMPORTED_MODULE_3__["PizzaViewComponent"],
-                _components_pizza_form_pizza_form_component__WEBPACK_IMPORTED_MODULE_4__["PizzaFormComponent"],
-                _components_pizza_form_details_pizza_form_details_component__WEBPACK_IMPORTED_MODULE_10__["PizzaFormDetailsComponent"],
-                _components_pizza_form_summary_pizza_form_summary_component__WEBPACK_IMPORTED_MODULE_11__["PizzaFormSummaryComponent"],
-                _components_pizza_form_steps_pizza_form_steps_component__WEBPACK_IMPORTED_MODULE_13__["PizzaFormStepsComponent"],
-                _components_pizza_toppings_pizza_toppings_component__WEBPACK_IMPORTED_MODULE_14__["PizzaToppingsComponent"],
-                _components_pizza_price_pizza_price_component__WEBPACK_IMPORTED_MODULE_15__["PizzaPriceComponent"]
+                _components_pizza_form_pizza_form_component__WEBPACK_IMPORTED_MODULE_4__["PizzaFormComponent"], _components_pizza_form_details_pizza_form_details_component__WEBPACK_IMPORTED_MODULE_10__["PizzaFormDetailsComponent"], _components_pizza_form_summary_pizza_form_summary_component__WEBPACK_IMPORTED_MODULE_11__["PizzaFormSummaryComponent"], _components_pizza_form_steps_pizza_form_steps_component__WEBPACK_IMPORTED_MODULE_17__["PizzaFormStepsComponent"], _components_pizza_toppings_pizza_toppings_component__WEBPACK_IMPORTED_MODULE_18__["PizzaToppingsComponent"], _components_pizza_price_pizza_price_component__WEBPACK_IMPORTED_MODULE_19__["PizzaPriceComponent"]
             ],
             imports: [
                 _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_8__["ReactiveFormsModule"],
                 _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_9__["BrowserAnimationsModule"],
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_6__["HttpClientModule"],
-                _ngrx_store__WEBPACK_IMPORTED_MODULE_7__["StoreModule"].forRoot(_store_reducers_app_reducers__WEBPACK_IMPORTED_MODULE_12__["appReducers"]),
+                _ngrx_store__WEBPACK_IMPORTED_MODULE_7__["StoreModule"].forRoot(_store_reducers_app_reducers__WEBPACK_IMPORTED_MODULE_15__["appReducers"]),
+                _ngrx_effects__WEBPACK_IMPORTED_MODULE_13__["EffectsModule"].forRoot([_store_effects_pizza_effects__WEBPACK_IMPORTED_MODULE_12__["PizzaEffects"]]),
+                _ngrx_router_store__WEBPACK_IMPORTED_MODULE_16__["StoreRouterConnectingModule"].forRoot({ stateKey: 'router' }),
             ],
+            providers: [_services_pizza_service__WEBPACK_IMPORTED_MODULE_14__["PizzaService"]],
             exports: [
                 _containers_pizza_container_pizza_container_component__WEBPACK_IMPORTED_MODULE_5__["PizzaContainerComponent"]
             ]
         })
     ], PizzaModule);
     return PizzaModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/pizza/services/pizza.service.ts":
+/*!*************************************************!*\
+  !*** ./src/app/pizza/services/pizza.service.ts ***!
+  \*************************************************/
+/*! exports provided: PizzaService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PizzaService", function() { return PizzaService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../../../environments/environment */ "./src/environments/environment.ts");
+
+
+
+
+var PizzaService = /** @class */ (function () {
+    function PizzaService(http) {
+        this.http = http;
+        this.pizzasUrl = _environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].apiUrl + "pizzas.json";
+    }
+    PizzaService.prototype.getPizzas = function () {
+        return this.http.get(this.pizzasUrl);
+    };
+    PizzaService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
+    ], PizzaService);
+    return PizzaService;
 }());
 
 
@@ -948,6 +993,53 @@ var GetPizzasSuccess = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/pizza/store/effects/pizza.effects.ts":
+/*!******************************************************!*\
+  !*** ./src/app/pizza/store/effects/pizza.effects.ts ***!
+  \******************************************************/
+/*! exports provided: PizzaEffects */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PizzaEffects", function() { return PizzaEffects; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _ngrx_effects__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ngrx/effects */ "./node_modules/@ngrx/effects/fesm5/effects.js");
+/* harmony import */ var _services_pizza_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/pizza.service */ "./src/app/pizza/services/pizza.service.ts");
+/* harmony import */ var _actions_pizza_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../actions/pizza.actions */ "./src/app/pizza/store/actions/pizza.actions.ts");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
+
+
+
+
+
+
+
+var PizzaEffects = /** @class */ (function () {
+    function PizzaEffects(pizzaService, actions$) {
+        var _this = this;
+        this.pizzaService = pizzaService;
+        this.actions$ = actions$;
+        this.getPizzas$ = this.actions$.pipe(Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_2__["ofType"])(_actions_pizza_actions__WEBPACK_IMPORTED_MODULE_4__["EPizzaActions"].GetPizzas), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["switchMap"])(function () { return _this.pizzaService.getPizzas(); }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["switchMap"])(function (pizzaHttp) { return Object(rxjs__WEBPACK_IMPORTED_MODULE_5__["of"])(new _actions_pizza_actions__WEBPACK_IMPORTED_MODULE_4__["GetPizzasSuccess"](pizzaHttp.pizzas)); }));
+    }
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_2__["Effect"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
+    ], PizzaEffects.prototype, "getPizzas$", void 0);
+    PizzaEffects = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_pizza_service__WEBPACK_IMPORTED_MODULE_3__["PizzaService"],
+            _ngrx_effects__WEBPACK_IMPORTED_MODULE_2__["Actions"]])
+    ], PizzaEffects);
+    return PizzaEffects;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/pizza/store/reducers/app.reducers.ts":
 /*!******************************************************!*\
   !*** ./src/app/pizza/store/reducers/app.reducers.ts ***!
@@ -989,7 +1081,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function formsReducers(state, action) {
+var formsReducers = function (state, action) {
     if (state === void 0) { state = _state_forms_state__WEBPACK_IMPORTED_MODULE_1__["initialFormsState"]; }
     switch (action.type) {
         case _actions_forms_actions__WEBPACK_IMPORTED_MODULE_2__["EFormsActions"].UpdateForm:
@@ -1001,7 +1093,7 @@ function formsReducers(state, action) {
         default:
             return state;
     }
-}
+};
 
 
 /***/ }),
@@ -1022,7 +1114,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function pizzaReducers(state, action) {
+var pizzaReducers = function (state, action) {
     if (state === void 0) { state = _state_pizza_state__WEBPACK_IMPORTED_MODULE_2__["initialPizzaState"]; }
     switch (action.type) {
         case _actions_pizza_actions__WEBPACK_IMPORTED_MODULE_1__["EPizzaActions"].GetPizzasSuccess: {
@@ -1031,7 +1123,7 @@ function pizzaReducers(state, action) {
         default:
             return state;
     }
-}
+};
 
 
 /***/ }),
@@ -1091,6 +1183,33 @@ var initialPizzaState = {
     pizzas: null,
     selectedPizza: null,
 };
+
+
+/***/ }),
+
+/***/ "./src/app/pizza/validators/pizza.validator.ts":
+/*!*****************************************************!*\
+  !*** ./src/app/pizza/validators/pizza.validator.ts ***!
+  \*****************************************************/
+/*! exports provided: PizzaValidator */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PizzaValidator", function() { return PizzaValidator; });
+var PizzaValidator = /** @class */ (function () {
+    function PizzaValidator() {
+    }
+    PizzaValidator.checkEmailsMatch = function (control) {
+        var email = control.get('email');
+        var confirm = control.get('confirm');
+        if (!(email && confirm))
+            return null;
+        return email.value === confirm.value ? null : { nomatch: true };
+    };
+    return PizzaValidator;
+}());
+
 
 
 /***/ }),

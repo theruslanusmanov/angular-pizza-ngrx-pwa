@@ -1,0 +1,20 @@
+{
+    "pizzas": [
+      {
+        "id": 1,
+        "name": "PiZZa ONE",
+        "price": 100
+      },
+      {
+        "id": 2,
+        "name": "PiZZa TWO",
+        "price": 1500
+      },
+      {
+        "id": 3,
+        "name": "PiZZa THREE",
+        "price": 333
+      }
+    ]
+  }
+  

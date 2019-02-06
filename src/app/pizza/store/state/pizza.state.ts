@@ -1,5 +1,4 @@
-import { IPizza } from './../../models/pizza'
-import { ITopping } from '../../models/topping.interface';
+import { IPizza } from './../../models/pizza';
 
 export interface IPizzaState {
     pizzas: IPizza[];

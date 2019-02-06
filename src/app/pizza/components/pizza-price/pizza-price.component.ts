@@ -18,7 +18,7 @@ export class PizzaPriceComponent implements OnInit {
   ngOnInit() {
     this.summary$.subscribe(value => {
       this.price = value;
-    })
+    });
   }
 
 }

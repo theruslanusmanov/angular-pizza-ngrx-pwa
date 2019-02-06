@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - "9"
+  - "11"
 dist: trusty
 sudo: required
 branches:
@@ -10,5 +10,5 @@ before_script:
   - npm install -g @angular/cli
 script:
 - ng lint
-- ng build --prod --base-href https://owlruslan.github.io/angular-pizza-ngrx-pwa/
 - ng test
+- ng build --prod --base-href https://owlruslan.github.io/angular-pizza-ngrx-pwa/

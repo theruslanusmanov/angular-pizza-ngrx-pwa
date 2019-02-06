@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { PizzaValidator } from '../../validators/pizza.validator';
 import { Store } from '@ngrx/store';
 import { IAppState } from '../../store/state/app.state';
 import { UpdateForm, UpdateSteps, UpdateSummary } from '../../store/actions/forms.actions';
@@ -21,7 +20,7 @@ export class PizzaFormComponent implements OnInit {
       email: ['', Validators.required],
       phone: ['', Validators.required],
       address: ['', [Validators.required, Validators.minLength(3)]],
-    }, { validator: PizzaValidator.checkEmailsMatch }),
+    }),
     toppings: this.fb.group({
       toppings: [[]]
     })
@@ -66,7 +65,7 @@ export class PizzaFormComponent implements OnInit {
       .subscribe(value => {
         if (this.form.get('details').valid) {
           this.store.dispatch(new UpdateForm(value.toppings));
-          let summary: number = 0;
+          let summary = 0;
           value.toppings.forEach(topping => {
             summary += topping.price;
           });

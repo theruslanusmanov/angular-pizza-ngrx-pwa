@@ -2,18 +2,30 @@ language: node_js
 node_js:
   - "11"
 dist: trusty
-sudo: required
-deploy:
-  provider: pages
-  skip-cleanup: true
-  github-token: $GITHUB_TOKEN # Set in the settings page of your repository, as a secure variable
-  keep-history: true
-  local-dir: dist/pizza-pwa
-  on:
-    branch: master
+sudo: false
+
+branches:
+  only:
+  - master
+
+cache:
+  directories:
+    - node_modules
+
 before_script:
   - npm install -g @angular/cli
+
+install:
+  - npm install -g yarn
+  - npm install
+
 script:
-# - ng lint
-# - ng test --watch=false --browsers=ChromeHeadless
-- ng build
+  - yarn build --base-href https://owlruslan.github.io/angular-pizza-ngrx-pwa/
+deploy:
+  provider: pages
+  skip_cleanup: true
+  keep-history: true
+  github_token: $GITHUB_TOKEN
+  local_dir: dist/
+  on:
+    branch: master

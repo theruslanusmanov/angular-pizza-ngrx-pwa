@@ -1,7 +1,8 @@
-# PizzaPwa
+# [PizzaPwa](https://owlruslan.github.io/angular-pizza-ngrx-pwa)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.4.
 ##### Work in progress
+## [Demo](https://owlruslan.github.io/angular-pizza-ngrx-pwa)
 ## User details
 ![Page one](https://raw.githubusercontent.com/owlruslan/pizza-pwa/master/page_1.gif "Page one")
 ## Pizza creator

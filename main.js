@@ -812,17 +812,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
 /* harmony import */ var _components_pizza_form_details_pizza_form_details_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/pizza-form-details/pizza-form-details.component */ "./src/app/pizza/components/pizza-form-details/pizza-form-details.component.ts");
 /* harmony import */ var _components_pizza_form_summary_pizza_form_summary_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/pizza-form-summary/pizza-form-summary.component */ "./src/app/pizza/components/pizza-form-summary/pizza-form-summary.component.ts");
-/* harmony import */ var _store_effects_pizza_effects__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./store/effects/pizza.effects */ "./src/app/pizza/store/effects/pizza.effects.ts");
-/* harmony import */ var _ngrx_effects__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @ngrx/effects */ "./node_modules/@ngrx/effects/fesm5/effects.js");
-/* harmony import */ var _services_pizza_service__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./services/pizza.service */ "./src/app/pizza/services/pizza.service.ts");
-/* harmony import */ var _store_reducers_app_reducers__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./store/reducers/app.reducers */ "./src/app/pizza/store/reducers/app.reducers.ts");
-/* harmony import */ var _ngrx_router_store__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @ngrx/router-store */ "./node_modules/@ngrx/router-store/fesm5/router-store.js");
-/* harmony import */ var _components_pizza_form_steps_pizza_form_steps_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./components/pizza-form-steps/pizza-form-steps.component */ "./src/app/pizza/components/pizza-form-steps/pizza-form-steps.component.ts");
-/* harmony import */ var _components_pizza_toppings_pizza_toppings_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./components/pizza-toppings/pizza-toppings.component */ "./src/app/pizza/components/pizza-toppings/pizza-toppings.component.ts");
-/* harmony import */ var _components_pizza_price_pizza_price_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./components/pizza-price/pizza-price.component */ "./src/app/pizza/components/pizza-price/pizza-price.component.ts");
-
-
-
+/* harmony import */ var _store_reducers_app_reducers__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./store/reducers/app.reducers */ "./src/app/pizza/store/reducers/app.reducers.ts");
+/* harmony import */ var _ngrx_router_store__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @ngrx/router-store */ "./node_modules/@ngrx/router-store/fesm5/router-store.js");
+/* harmony import */ var _components_pizza_form_steps_pizza_form_steps_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/pizza-form-steps/pizza-form-steps.component */ "./src/app/pizza/components/pizza-form-steps/pizza-form-steps.component.ts");
+/* harmony import */ var _components_pizza_toppings_pizza_toppings_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/pizza-toppings/pizza-toppings.component */ "./src/app/pizza/components/pizza-toppings/pizza-toppings.component.ts");
+/* harmony import */ var _components_pizza_price_pizza_price_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/pizza-price/pizza-price.component */ "./src/app/pizza/components/pizza-price/pizza-price.component.ts");
 
 
 
@@ -848,61 +842,27 @@ var PizzaModule = /** @class */ (function () {
             declarations: [
                 _containers_pizza_container_pizza_container_component__WEBPACK_IMPORTED_MODULE_5__["PizzaContainerComponent"],
                 _components_pizza_view_pizza_view_component__WEBPACK_IMPORTED_MODULE_3__["PizzaViewComponent"],
-                _components_pizza_form_pizza_form_component__WEBPACK_IMPORTED_MODULE_4__["PizzaFormComponent"], _components_pizza_form_details_pizza_form_details_component__WEBPACK_IMPORTED_MODULE_10__["PizzaFormDetailsComponent"], _components_pizza_form_summary_pizza_form_summary_component__WEBPACK_IMPORTED_MODULE_11__["PizzaFormSummaryComponent"], _components_pizza_form_steps_pizza_form_steps_component__WEBPACK_IMPORTED_MODULE_17__["PizzaFormStepsComponent"], _components_pizza_toppings_pizza_toppings_component__WEBPACK_IMPORTED_MODULE_18__["PizzaToppingsComponent"], _components_pizza_price_pizza_price_component__WEBPACK_IMPORTED_MODULE_19__["PizzaPriceComponent"]
+                _components_pizza_form_pizza_form_component__WEBPACK_IMPORTED_MODULE_4__["PizzaFormComponent"],
+                _components_pizza_form_details_pizza_form_details_component__WEBPACK_IMPORTED_MODULE_10__["PizzaFormDetailsComponent"],
+                _components_pizza_form_summary_pizza_form_summary_component__WEBPACK_IMPORTED_MODULE_11__["PizzaFormSummaryComponent"],
+                _components_pizza_form_steps_pizza_form_steps_component__WEBPACK_IMPORTED_MODULE_14__["PizzaFormStepsComponent"],
+                _components_pizza_toppings_pizza_toppings_component__WEBPACK_IMPORTED_MODULE_15__["PizzaToppingsComponent"],
+                _components_pizza_price_pizza_price_component__WEBPACK_IMPORTED_MODULE_16__["PizzaPriceComponent"]
             ],
             imports: [
                 _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_8__["ReactiveFormsModule"],
                 _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_9__["BrowserAnimationsModule"],
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_6__["HttpClientModule"],
-                _ngrx_store__WEBPACK_IMPORTED_MODULE_7__["StoreModule"].forRoot(_store_reducers_app_reducers__WEBPACK_IMPORTED_MODULE_15__["appReducers"]),
-                _ngrx_effects__WEBPACK_IMPORTED_MODULE_13__["EffectsModule"].forRoot([_store_effects_pizza_effects__WEBPACK_IMPORTED_MODULE_12__["PizzaEffects"]]),
-                _ngrx_router_store__WEBPACK_IMPORTED_MODULE_16__["StoreRouterConnectingModule"].forRoot({ stateKey: 'router' }),
+                _ngrx_store__WEBPACK_IMPORTED_MODULE_7__["StoreModule"].forRoot(_store_reducers_app_reducers__WEBPACK_IMPORTED_MODULE_12__["appReducers"]),
+                _ngrx_router_store__WEBPACK_IMPORTED_MODULE_13__["StoreRouterConnectingModule"].forRoot({ stateKey: 'router' }),
             ],
-            providers: [_services_pizza_service__WEBPACK_IMPORTED_MODULE_14__["PizzaService"]],
             exports: [
                 _containers_pizza_container_pizza_container_component__WEBPACK_IMPORTED_MODULE_5__["PizzaContainerComponent"]
             ]
         })
     ], PizzaModule);
     return PizzaModule;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/pizza/services/pizza.service.ts":
-/*!*************************************************!*\
-  !*** ./src/app/pizza/services/pizza.service.ts ***!
-  \*************************************************/
-/*! exports provided: PizzaService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PizzaService", function() { return PizzaService; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
-/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../../../environments/environment */ "./src/environments/environment.ts");
-
-
-
-
-var PizzaService = /** @class */ (function () {
-    function PizzaService(http) {
-        this.http = http;
-        this.pizzasUrl = _environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].apiUrl + "pizzas.json";
-    }
-    PizzaService.prototype.getPizzas = function () {
-        return this.http.get(this.pizzasUrl);
-    };
-    PizzaService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
-    ], PizzaService);
-    return PizzaService;
 }());
 
 
@@ -956,89 +916,6 @@ var UpdateSummary = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/pizza/store/actions/pizza.actions.ts":
-/*!******************************************************!*\
-  !*** ./src/app/pizza/store/actions/pizza.actions.ts ***!
-  \******************************************************/
-/*! exports provided: EPizzaActions, GetPizzas, GetPizzasSuccess */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EPizzaActions", function() { return EPizzaActions; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GetPizzas", function() { return GetPizzas; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GetPizzasSuccess", function() { return GetPizzasSuccess; });
-var EPizzaActions;
-(function (EPizzaActions) {
-    EPizzaActions["GetPizzas"] = "[Pizza] Get Pizzas";
-    EPizzaActions["GetPizzasSuccess"] = "[Pizza] Get Pizzas Success";
-})(EPizzaActions || (EPizzaActions = {}));
-var GetPizzas = /** @class */ (function () {
-    function GetPizzas() {
-        this.type = EPizzaActions.GetPizzas;
-    }
-    return GetPizzas;
-}());
-
-var GetPizzasSuccess = /** @class */ (function () {
-    function GetPizzasSuccess(payload) {
-        this.payload = payload;
-        this.type = EPizzaActions.GetPizzasSuccess;
-    }
-    return GetPizzasSuccess;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/pizza/store/effects/pizza.effects.ts":
-/*!******************************************************!*\
-  !*** ./src/app/pizza/store/effects/pizza.effects.ts ***!
-  \******************************************************/
-/*! exports provided: PizzaEffects */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PizzaEffects", function() { return PizzaEffects; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _ngrx_effects__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ngrx/effects */ "./node_modules/@ngrx/effects/fesm5/effects.js");
-/* harmony import */ var _services_pizza_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/pizza.service */ "./src/app/pizza/services/pizza.service.ts");
-/* harmony import */ var _actions_pizza_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../actions/pizza.actions */ "./src/app/pizza/store/actions/pizza.actions.ts");
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
-
-
-
-
-
-
-
-var PizzaEffects = /** @class */ (function () {
-    function PizzaEffects(pizzaService, actions$) {
-        var _this = this;
-        this.pizzaService = pizzaService;
-        this.actions$ = actions$;
-        this.getPizzas$ = this.actions$.pipe(Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_2__["ofType"])(_actions_pizza_actions__WEBPACK_IMPORTED_MODULE_4__["EPizzaActions"].GetPizzas), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["switchMap"])(function () { return _this.pizzaService.getPizzas(); }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["switchMap"])(function (pizzaHttp) { return Object(rxjs__WEBPACK_IMPORTED_MODULE_5__["of"])(new _actions_pizza_actions__WEBPACK_IMPORTED_MODULE_4__["GetPizzasSuccess"](pizzaHttp.pizzas)); }));
-    }
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_2__["Effect"])(),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
-    ], PizzaEffects.prototype, "getPizzas$", void 0);
-    PizzaEffects = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_pizza_service__WEBPACK_IMPORTED_MODULE_3__["PizzaService"],
-            _ngrx_effects__WEBPACK_IMPORTED_MODULE_2__["Actions"]])
-    ], PizzaEffects);
-    return PizzaEffects;
-}());
-
-
-
-/***/ }),
-
 /***/ "./src/app/pizza/store/reducers/app.reducers.ts":
 /*!******************************************************!*\
   !*** ./src/app/pizza/store/reducers/app.reducers.ts ***!
@@ -1050,15 +927,12 @@ var PizzaEffects = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "appReducers", function() { return appReducers; });
 /* harmony import */ var _ngrx_router_store__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @ngrx/router-store */ "./node_modules/@ngrx/router-store/fesm5/router-store.js");
-/* harmony import */ var _pizza_reducers__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./pizza.reducers */ "./src/app/pizza/store/reducers/pizza.reducers.ts");
-/* harmony import */ var _forms_reducers__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./forms.reducers */ "./src/app/pizza/store/reducers/forms.reducers.ts");
-
+/* harmony import */ var _forms_reducers__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./forms.reducers */ "./src/app/pizza/store/reducers/forms.reducers.ts");
 
 
 var appReducers = {
     router: _ngrx_router_store__WEBPACK_IMPORTED_MODULE_0__["routerReducer"],
-    pizzas: _pizza_reducers__WEBPACK_IMPORTED_MODULE_1__["pizzaReducers"],
-    forms: _forms_reducers__WEBPACK_IMPORTED_MODULE_2__["formsReducers"]
+    forms: _forms_reducers__WEBPACK_IMPORTED_MODULE_1__["formsReducers"]
 };
 
 
@@ -1089,36 +963,6 @@ var formsReducers = function (state, action) {
             return tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"]({}, state, { steps: action.payload });
         case _actions_forms_actions__WEBPACK_IMPORTED_MODULE_2__["EFormsActions"].UpdateSummary:
             return tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"]({}, state, { summary: action.payload });
-        default:
-            return state;
-    }
-};
-
-
-/***/ }),
-
-/***/ "./src/app/pizza/store/reducers/pizza.reducers.ts":
-/*!********************************************************!*\
-  !*** ./src/app/pizza/store/reducers/pizza.reducers.ts ***!
-  \********************************************************/
-/*! exports provided: pizzaReducers */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "pizzaReducers", function() { return pizzaReducers; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _actions_pizza_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../actions/pizza.actions */ "./src/app/pizza/store/actions/pizza.actions.ts");
-/* harmony import */ var _state_pizza_state__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../state/pizza.state */ "./src/app/pizza/store/state/pizza.state.ts");
-
-
-
-var pizzaReducers = function (state, action) {
-    if (state === void 0) { state = _state_pizza_state__WEBPACK_IMPORTED_MODULE_2__["initialPizzaState"]; }
-    switch (action.type) {
-        case _actions_pizza_actions__WEBPACK_IMPORTED_MODULE_1__["EPizzaActions"].GetPizzasSuccess: {
-            return tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"]({}, state, { pizzas: action.payload });
-        }
         default:
             return state;
     }
@@ -1163,24 +1007,6 @@ var initialFormsState = {
     toppings: [],
     steps: null,
     summary: 0
-};
-
-
-/***/ }),
-
-/***/ "./src/app/pizza/store/state/pizza.state.ts":
-/*!**************************************************!*\
-  !*** ./src/app/pizza/store/state/pizza.state.ts ***!
-  \**************************************************/
-/*! exports provided: initialPizzaState */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "initialPizzaState", function() { return initialPizzaState; });
-var initialPizzaState = {
-    pizzas: null,
-    selectedPizza: null,
 };
 
 

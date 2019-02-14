@@ -13,12 +13,12 @@ import { UpdateSteps } from '../../store/actions/forms.actions';
 export class PizzaFormSummaryComponent implements OnInit {
   summary$: Observable<number> = this.store.pipe(select(selectFormSummary));
   price;
-  
+
   constructor(private store: Store<IAppState>) { }
 
   ngOnInit() {
     this.summary$.subscribe(value => {
       this.price = value;
-    })
+    });
   }
 }

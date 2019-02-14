@@ -1,4 +1,4 @@
-# [PizzaPwa](https://owlruslan.github.io/angular-pizza-ngrx-pwa)
+# PizzaPwa
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.4.
 ##### Work in progress

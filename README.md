@@ -34,10 +34,8 @@ app.module.ts
     ├── containers
     │   └── pizza-container
     ├── models
-    ├── services
     ├── store
     │   ├── actions
-    │   ├── effects
     │   ├── reducers
     │   ├── selectors
     │   └── state

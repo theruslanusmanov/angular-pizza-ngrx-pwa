@@ -66,7 +66,7 @@ export class PizzaFormComponent implements OnInit {
       .subscribe(value => {
         if (this.form.get('details').valid) {
           this.store.dispatch(new UpdateForm(value.toppings));
-          let summary: number = 0;
+          let summary = 0;
           value.toppings.forEach(topping => {
             summary += topping.price;
           });

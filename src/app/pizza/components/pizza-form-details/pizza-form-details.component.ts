@@ -9,10 +9,8 @@ import { FormGroup } from '@angular/forms';
 export class PizzaFormDetailsComponent implements OnInit {
   @Input()
   parent: FormGroup;
-  
+
   constructor() { }
 
-  ngOnInit() {
-  }
-
+  ngOnInit() { }
 }

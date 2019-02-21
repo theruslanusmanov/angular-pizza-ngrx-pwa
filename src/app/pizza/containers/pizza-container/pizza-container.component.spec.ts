@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PizzaContainerComponent } from './pizza-container.component';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 describe('PizzaContainerComponent', () => {
   let component: PizzaContainerComponent;
@@ -8,7 +9,8 @@ describe('PizzaContainerComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PizzaContainerComponent ]
+      declarations: [ PizzaContainerComponent ],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA]
     })
     .compileComponents();
   }));

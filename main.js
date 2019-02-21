@@ -98,15 +98,13 @@ __webpack_require__.r(__webpack_exports__);
 
 var AppComponent = /** @class */ (function () {
     function AppComponent() {
-        this.title = 'pizza-pwa';
     }
     AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-root',
             template: __webpack_require__(/*! ./app.component.html */ "./src/app/app.component.html"),
             styles: [__webpack_require__(/*! ./app.component.scss */ "./src/app/app.component.scss")]
-        }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+        })
     ], AppComponent);
     return AppComponent;
 }());
@@ -213,8 +211,7 @@ __webpack_require__.r(__webpack_exports__);
 var PizzaFormDetailsComponent = /** @class */ (function () {
     function PizzaFormDetailsComponent() {
     }
-    PizzaFormDetailsComponent.prototype.ngOnInit = function () {
-    };
+    PizzaFormDetailsComponent.prototype.ngOnInit = function () { };
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormGroup"])
@@ -1028,8 +1025,9 @@ var PizzaValidator = /** @class */ (function () {
     PizzaValidator.checkEmailsMatch = function (control) {
         var email = control.get('email');
         var confirm = control.get('confirm');
-        if (!(email && confirm))
+        if (!(email && confirm)) {
             return null;
+        }
         return email.value === confirm.value ? null : { nomatch: true };
     };
     return PizzaValidator;

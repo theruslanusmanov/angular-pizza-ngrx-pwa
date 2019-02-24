@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PizzaFormSummaryComponent } from './pizza-form-summary.component';
+import { StoreModule, Store } from '@ngrx/store';
 
 describe('PizzaFormSummaryComponent', () => {
   let component: PizzaFormSummaryComponent;
@@ -8,7 +9,9 @@ describe('PizzaFormSummaryComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PizzaFormSummaryComponent ]
+      imports: [StoreModule.forRoot({})],
+      declarations: [ PizzaFormSummaryComponent ],
+      providers: [Store]
     })
     .compileComponents();
   }));

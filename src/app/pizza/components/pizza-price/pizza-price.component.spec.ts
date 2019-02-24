@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PizzaPriceComponent } from './pizza-price.component';
+import { StoreModule, Store } from '@ngrx/store';
 
 describe('PizzaPriceComponent', () => {
   let component: PizzaPriceComponent;
@@ -8,7 +9,9 @@ describe('PizzaPriceComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PizzaPriceComponent ]
+      imports: [StoreModule.forRoot({})],
+      declarations: [ PizzaPriceComponent ],
+      providers: [Store]
     })
     .compileComponents();
   }));

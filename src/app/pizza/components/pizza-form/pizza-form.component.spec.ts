@@ -3,6 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { PizzaFormComponent } from './pizza-form.component';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { StoreModule, Store } from '@ngrx/store';
 
 describe('PizzaFormComponent', () => {
   let component: PizzaFormComponent;
@@ -14,11 +15,15 @@ describe('PizzaFormComponent', () => {
     TestBed.configureTestingModule({
       imports: [
         FormsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        StoreModule.forRoot({})
       ],
       declarations: [ PizzaFormComponent ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
-      providers: [ {provide: FormBuilder, useValue: formBuilder} ]
+      providers: [
+        {provide: FormBuilder, useValue: formBuilder},
+        Store
+      ]
     })
     .compileComponents();
   }));

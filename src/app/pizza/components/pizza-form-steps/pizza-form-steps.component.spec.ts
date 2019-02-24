@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PizzaFormStepsComponent } from './pizza-form-steps.component';
+import { StoreModule, Store } from '@ngrx/store';
 
 describe('PizzaFormStepsComponent', () => {
   let component: PizzaFormStepsComponent;
@@ -8,7 +9,9 @@ describe('PizzaFormStepsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PizzaFormStepsComponent ]
+      imports: [StoreModule.forRoot({})],
+      declarations: [ PizzaFormStepsComponent ],
+      providers: [Store]
     })
     .compileComponents();
   }));
